@@ -71,6 +71,7 @@ input[type='number'] {
   --colors-grayish-cyan: hsl(184, 14%, 56%);
   --colors-light-grayish-cyan: hsl(185, 41%, 84%);
   --colors-very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --colors-red: hsl(0, 100%, 79%);
   --colors-white: hsl(0, 0%, 100%);
 }
 
@@ -99,11 +100,11 @@ main {
 .calculator-form {
   display: grid;
   width: min(1024px, 100%);
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 1rem;
   background-color: var(--colors-white);
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
 /* Calculator input */
@@ -131,13 +132,13 @@ main {
   background-color: var(--colors-very-light-grayish-cyan);
   border-radius: 5px;
   padding: 0.5rem 1rem;
-  outline-color: transparent;
+  outline: 2px solid transparent;
   transition: outline-color 0.3s ease-in;
 }
 
 .input-primary.focused,
 .tip-selector input[type='radio']:checked + .input-primary {
-  outline: 2px solid var(--colors-strong-cyan);
+  outline-color: var(--colors-strong-cyan);
 }
 
 .input-primary img {
@@ -152,6 +153,25 @@ main {
   font-size: 1.5rem;
   color: var(--colors-very-dark-cyan);
   caret-color: var(--colors-strong-cyan);
+}
+
+.input-primary.invalid {
+  outline-color: var(--colors-red);
+}
+
+.input-primary + .error-message {
+  color: var(--colors-red);
+  margin-top: 0.5rem;
+  text-align: right;
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: 0.3s ease-in;
+  transition-property: transform, opacity;
+}
+
+.input-primary.invalid + .error-message {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .tip-selector {
@@ -192,8 +212,8 @@ main {
 .calculator-output {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  padding: 4rem 2.5rem 3rem;
+  gap: 2rem;
+  padding: 2rem;
   background-color: var(--colors-very-dark-cyan);
   border-radius: inherit;
 }
@@ -218,7 +238,11 @@ main {
 
 .calculator-output .result .value {
   color: var(--colors-strong-cyan);
-  font-size: 2.5rem;
+  font-size: 2rem;
+}
+
+.calculator-output .result .value::before {
+  content: '$';
 }
 
 .calculator-output button {

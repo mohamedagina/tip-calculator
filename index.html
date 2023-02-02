@@ -29,7 +29,7 @@
         <img class="app-logo" src="images/logo.svg" alt="" />
       </header>
 
-      <form class="calculator-form">
+      <form id="main-form" class="calculator-form">
         <section class="calculator-input">
           <label class="label-primary">
             bill
@@ -70,21 +70,22 @@
               <img src="images/icon-person.svg" />
               <input name="nop" type="number" placeholder="0" />
             </div>
+            <div class="error-message">Can`t be zero</div>
           </label>
         </section>
 
         <section class="calculator-output">
           <div class="result">
             <span class="key">Tip Amount</span>
-            <span class="value">$0.00</span>
+            <span id="tip-amount" class="value">0.00</span>
           </div>
 
           <div class="result">
             <span class="key">Total</span>
-            <span class="value">$0.00</span>
+            <span id="total" class="value">0.00</span>
           </div>
 
-          <button type="reset" disabled>reset</button>
+          <button id="reset-btn" type="reset" disabled>reset</button>
         </section>
       </form>
     </main>
