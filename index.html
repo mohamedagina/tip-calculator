@@ -30,7 +30,7 @@
       </header>
 
       <form class="calculator-form">
-        <section class="calculator-inputs">
+        <section class="calculator-input">
           <label class="label-primary">
             bill
             <div class="input-primary">
@@ -39,9 +39,8 @@
             </div>
           </label>
 
-          <div>
-            <span class="label-primary">select tip %</span>
-
+          <div class="label-primary">
+            select tip %
             <div class="tip-selector">
               <input id="tip5" type="radio" value="5" name="tip" />
               <label class="tip" for="tip5">5%</label>
@@ -58,7 +57,7 @@
               <input id="tip50" type="radio" value="50" name="tip" />
               <label class="tip" for="tip50">50%</label>
 
-              <input id="tip" type="radio" name="tip" />
+              <input id="tip" type="radio" name="tip" value="0" />
               <div class="input-primary">
                 <input name="tip" type="number" placeholder="Custom" />
               </div>
@@ -74,7 +73,7 @@
           </label>
         </section>
 
-        <section class="calculator-outputs">
+        <section class="calculator-output">
           <div class="result">
             <span class="key">Tip Amount</span>
             <span class="value">$0.00</span>
@@ -85,7 +84,7 @@
             <span class="value">$0.00</span>
           </div>
 
-          <button type="reset">reset</button>
+          <button type="reset" disabled>reset</button>
         </section>
       </form>
     </main>
