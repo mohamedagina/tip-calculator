@@ -11,11 +11,84 @@
       href="./images/favicon-32x32.png"
     />
 
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="css/style.css" />
 
     <title>Tip calculator app</title>
   </head>
   <body>
+    <main>
+      <header>
+        <img class="app-logo" src="images/logo.svg" alt="" />
+      </header>
+
+      <form class="calculator-form">
+        <section class="calculator-inputs">
+          <label class="label-primary">
+            bill
+            <div class="input-primary">
+              <img src="images/icon-dollar.svg" />
+              <input name="bill" type="number" placeholder="0" />
+            </div>
+          </label>
+
+          <div>
+            <span class="label-primary">select tip %</span>
+
+            <div class="tip-selector">
+              <input id="tip5" type="radio" value="5" name="tip" />
+              <label class="tip" for="tip5">5%</label>
+
+              <input id="tip10" type="radio" value="10" name="tip" />
+              <label class="tip" for="tip10">10%</label>
+
+              <input id="tip15" type="radio" value="15" name="tip" />
+              <label class="tip" for="tip15">15%</label>
+
+              <input id="tip25" type="radio" value="25" name="tip" />
+              <label class="tip" for="tip25">25%</label>
+
+              <input id="tip50" type="radio" value="50" name="tip" />
+              <label class="tip" for="tip50">50%</label>
+
+              <input id="tip" type="radio" name="tip" />
+              <div class="input-primary">
+                <input name="tip" type="number" placeholder="Custom" />
+              </div>
+            </div>
+          </div>
+
+          <label class="label-primary">
+            number of people
+            <div class="input-primary">
+              <img src="images/icon-person.svg" />
+              <input name="nop" type="number" placeholder="0" />
+            </div>
+          </label>
+        </section>
+
+        <section class="calculator-outputs">
+          <div class="result">
+            <span class="key">Tip Amount</span>
+            <span class="value">$0.00</span>
+          </div>
+
+          <div class="result">
+            <span class="key">Total</span>
+            <span class="value">$0.00</span>
+          </div>
+
+          <button type="reset">reset</button>
+        </section>
+      </form>
+    </main>
     <!--Footer Scripts-->
     <script src="js/main.js"></script>
   </body>
