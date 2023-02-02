@@ -34,6 +34,7 @@ mainForm.addEventListener('reset', () => {
   Object.assign({ bill: 0, tip: 0, nop: 0 });
   document.getElementById('tip-amount').innerText = '0.00';
   document.getElementById('total').innerText = '0.00';
+  document.getElementById('reset-btn').disabled = true;
 });
 
 for (const inputContainer of inputContainers) {
